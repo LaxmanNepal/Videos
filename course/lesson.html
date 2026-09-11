@@ -1,1 +1,59 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080a0f"><meta name="description" content="Laxman Nepal Creator Academy course lessons."><title>YouTube Creator Course — Laxman Nepal</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><a class="brand" href="./"><span class="brandmark">LN</span><span><b>Laxman Nepal</b><small>Creator Academy</small></span></a><nav><a href="./">Courses</a><a href="./#about">About</a></nav><div class="top-actions"><button id="themeBtn" class="icon-btn" aria-label="Toggle theme">◐</button><a class="github" href="https://github.com/LaxmanNepal/Videos" target="_blank" rel="noopener">GitHub ↗</a></div></header><main class="shell"><section class="layout"><div class="player-col"><div class="video-wrap"><video id="player" controls playsinline preload="metadata"></video><div id="playerOverlay" class="player-overlay"><div class="play-circle">▶</div><p>Select a lesson to start</p></div></div><div class="lesson-head"><div><span id="lessonNumber" class="pill">LESSON 01</span><h2 id="lessonTitle">Loading…</h2><p id="lessonMeta">YouTube Creator Course</p></div><div class="nav-buttons"><button id="prevBtn" class="nav-btn">← Previous</button><button id="nextBtn" class="nav-btn primary">Next →</button></div></div><div class="course-note"><span>✓</span><div><b>Your progress is saved automatically</b><p>Progress is stored in this browser.</p></div></div></div><aside class="playlist"><div class="playlist-top"><div><h3>Course lessons</h3><span id="playlistMeta">Loading…</span></div><div class="progress-ring" id="ring">0%</div></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search lessons…"></label><div id="lessonList" class="lesson-list"></div></aside></section></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0f">
+<meta name="description" content="Laxman Nepal Creator Academy course lessons.">
+<title>YouTube Creator Course — Laxman Nepal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./"><span class="brandmark">LN</span><span><b>Laxman Nepal</b><small>Creator Academy</small></span></a>
+  <nav><a href="./">Courses</a><a href="./#about">About</a></nav>
+  <div class="top-actions"><button id="themeBtn" class="icon-btn" aria-label="Toggle theme">◐</button><a class="github" href="https://github.com/LaxmanNepal/Videos" target="_blank" rel="noopener">GitHub ↗</a></div>
+</header>
+
+<main class="shell">
+<section class="layout">
+  <div class="player-col">
+    <div class="video-wrap" id="videoWrap">
+      <video id="player" playsinline preload="metadata"></video>
+      <div id="playerOverlay" class="player-overlay"><div class="play-circle">▶</div><p>Select a lesson to start</p></div>
+      <div class="video-toast" id="videoToast"></div>
+      <div class="video-controls" id="videoControls">
+        <button class="control-btn" id="playBtn" aria-label="Play or pause">▶</button>
+        <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+        <input class="seek" id="seek" type="range" min="0" max="1000" value="0" aria-label="Video progress">
+        <button class="control-btn" id="muteBtn" aria-label="Mute">🔊</button>
+        <button class="control-btn" id="speedBtn" aria-label="Playback speed">1×</button>
+        <button class="control-btn" id="pipBtn" aria-label="Picture in picture">▣</button>
+        <button class="control-btn" id="theaterBtn" aria-label="Theater mode">▭</button>
+        <button class="control-btn" id="fullscreenBtn" aria-label="Fullscreen">⛶</button>
+      </div>
+      <div class="speed-menu" id="speedMenu" role="menu">
+        <button data-speed="0.75">0.75×</button><button data-speed="1">1×</button><button data-speed="1.25">1.25×</button><button data-speed="1.5">1.5×</button><button data-speed="1.75">1.75×</button><button data-speed="2">2×</button>
+      </div>
+    </div>
+
+    <div class="lesson-head">
+      <div><span id="lessonNumber" class="pill">LESSON 01</span><h2 id="lessonTitle">Loading…</h2><p id="lessonMeta">YouTube Creator Course</p></div>
+      <div class="nav-buttons"><button id="prevBtn" class="nav-btn">← Previous</button><button id="nextBtn" class="nav-btn primary">Next →</button></div>
+    </div>
+    <div class="course-note"><span>✓</span><div><b>Your progress is saved automatically</b><p>Playback position and completed lessons are stored in this browser.</p></div></div>
+  </div>
+
+  <aside class="playlist">
+    <div class="playlist-top"><div><h3>Course lessons</h3><span id="playlistMeta">Loading…</span></div><div class="progress-ring" id="ring">0%</div></div>
+    <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search lessons…"></label>
+    <div id="lessonList" class="lesson-list"></div>
+  </aside>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
