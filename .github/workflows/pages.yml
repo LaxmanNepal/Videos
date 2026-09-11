@@ -3,6 +3,10 @@ name: Deploy Course to GitHub Pages
 on:
   push:
     branches: [main]
+    paths:
+      - 'course/**'
+      - '.github/workflows/pages.yml'
+      - 'index.html'
   workflow_dispatch:
 
 permissions:
@@ -23,12 +27,39 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Generate video manifest
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.parse import quote
+
+          root = Path('course/youtube')
+          videos = []
+          for path in sorted(root.glob('*.mp4'), key=lambda p: p.name.lower()):
+              videos.append({
+                  'name': path.name,
+                  'title': path.stem.replace('_', ' ').replace('-', ' ').strip(),
+                  'url': 'https://media.githubusercontent.com/media/LaxmanNepal/Videos/main/course/youtube/' + quote(path.name)
+              })
+
+          Path('course/videos.json').write_text(
+              json.dumps(videos, ensure_ascii=False, indent=2),
+              encoding='utf-8'
+          )
+          print(f'Generated {len(videos)} video entries')
+          PY
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
