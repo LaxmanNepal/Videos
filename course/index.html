@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d12">
+<meta name="description" content="Laxman Nepal YouTube Creator Course — watch every lesson in one clean player.">
+<title>YouTube Creator Course — Laxman Nepal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brandmark">LN</span><span><b>Laxman Nepal</b><small>YouTube Creator Course</small></span></a><div class="top-actions"><button id="themeBtn" class="icon-btn" aria-label="Toggle theme">◐</button><a class="github" href="https://github.com/LaxmanNepal/Videos" target="_blank" rel="noopener">GitHub ↗</a></div></header>
+<main class="shell">
+<section class="hero"><div><div class="eyebrow">CREATOR ACADEMY</div><h1>YouTube Creator Course</h1><p>Learn the complete creator workflow — from filming and editing to publishing and growth.</p></div><div class="stats"><div><strong id="lessonCount">—</strong><span>Lessons</span></div><div><strong id="progressText">0%</strong><span>Completed</span></div></div></section>
+<section class="layout">
+<div class="player-col">
+<div class="video-wrap"><video id="player" controls playsinline preload="metadata"></video><div id="playerOverlay" class="player-overlay"><div class="play-circle">▶</div><p>Select a lesson to start</p></div></div>
+<div class="lesson-head"><div><span id="lessonNumber" class="pill">LESSON 01</span><h2 id="lessonTitle">Welcome to the course</h2><p id="lessonMeta">Choose a lesson from the playlist.</p></div><div class="nav-buttons"><button id="prevBtn" class="nav-btn">← Previous</button><button id="nextBtn" class="nav-btn primary">Next →</button></div></div>
+<div class="course-note"><span>✓</span><div><b>Your progress is saved automatically</b><p>Progress is stored in this browser, so you can continue where you stopped.</p></div></div>
+</div>
+<aside class="playlist"><div class="playlist-top"><div><h3>Course lessons</h3><span id="playlistMeta">Loading…</span></div><div class="progress-ring" id="ring">0%</div></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search lessons…"></label><div id="lessonList" class="lesson-list"></div></aside>
+</section>
+</main>
+<footer>© Laxman Nepal · YouTube Creator Course</footer>
+<script src="app.js"></script>
+</body></html>
