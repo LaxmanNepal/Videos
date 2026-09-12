@@ -42,7 +42,7 @@ player?.addEventListener('ended',()=>{markComplete(current,false);showEndScreen(
 player?.addEventListener('error',()=>{wrap?.classList.remove('buffering');toastMsg('Video could not be loaded — try again')});
 playBtn?.addEventListener('click',togglePlay);overlay?.addEventListener('click',togglePlay);seek?.addEventListener('input',()=>{if(player.duration)player.currentTime=Number(seek.value)/1000*player.duration});
 muteBtn?.addEventListener('click',()=>{player.muted=!player.muted;localStorage.setItem(KEY.volume,String(player.muted?0:player.volume||1));updateControls()});
-player?.addEventListener('volumechange',()=>localStorage.setItem(KEY.volume,String(player.muted?0:player.volume));
+player?.addEventListener('volumechange',()=>localStorage.setItem(KEY.volume,String(player.muted?0:player.volume)));
 speedBtn?.addEventListener('click',()=>speedMenu?.classList.toggle('open'));speedMenu?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const s=Number(b.dataset.speed);player.playbackRate=s;localStorage.setItem(KEY.speed,String(s));if(speedBtn)speedBtn.textContent=s+'×';speedMenu.classList.remove('open')}));
 pipBtn?.addEventListener('click',async()=>{try{if(document.pictureInPictureElement)await document.exitPictureInPicture();else await player.requestPictureInPicture()}catch{toastMsg('PiP unavailable')}});
 theaterBtn?.addEventListener('click',()=>wrap?.classList.toggle('theater'));fullscreenBtn?.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await wrap.requestFullscreen()}catch{}});
